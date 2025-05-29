@@ -1,68 +1,245 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>iPhone 16 - Oferta Exclusiva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KING CELL</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
+      font-family: 'Segoe UI', sans-serif;
       background-color: #000;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      color: gold;
+    }
+    header {
+      background-color: #111;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .menu-icon {
+      font-size: 1.5rem;
+      color: gold;
+      cursor: pointer;
+    }
+    nav {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 60px;
+      width: 100%;
+    }
+    nav a {
+      padding: 15px;
+      color: gold;
+      text-decoration: none;
+      border-top: 1px solid #222;
+    }
+    nav a:hover {
+      background-color: gold;
+      color: #000;
+    }
+    .show { display: flex; }
+    .content {
       padding: 20px;
     }
-    h1 {
-      color: #fff;
+    .card {
+      background-color: #111;
+      border: 1px solid gold;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
     }
-    p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-    .preco {
-      color: #0f0;
-      font-size: 1.5em;
-      margin: 20px 0;
-    }
-    .imagens {
+    .slider {
       display: flex;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 10px;
+      padding: 10px 0;
+      justify-content: flex-start;
+    }
+    .slider::-webkit-scrollbar {
+      display: none;
+    }
+    .slider-item {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 100%;
+      display: flex;
       justify-content: center;
-      gap: 15px;
-      margin: 20px 0;
+      align-items: center;
+      background-color: #000;
     }
-    .imagens img {
-      width: 300px;
+    .slider-item img {
+      width: 100%;
+      height: auto;
+      display: block;
       border-radius: 10px;
     }
-    .botao-whatsapp {
-      background-color: #25D366;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.2em;
+    .slider-item video {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      border-radius: 10px;
+    }
+    .lead-box {
+      margin-top: 40px;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .lead-box select, .lead-box button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
       border: none;
-      border-radius: 10px;
+      border-radius: 5px;
+    }
+    .lead-box button {
+      background: gold;
+      color: #000;
+      font-weight: bold;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
     }
   </style>
 </head>
 <body>
-  <h1>iPhone 16 128GB</h1>
-  <p>Na loja oficial: R$ 7.799,00</p>
-  <p class="preco">Conosco: apenas R$ 5.000,00</p>
-  <p>1 ano de garantia incluso!</p>
-
-  <div class="imagens">
-    <img src="iphone161.png" alt="iPhone 16">
-    <img src="iphone162.png" alt="iPhone 16 Lateral">
-    <img src="iphone163.png" alt="Comparação iPhone">
+  <header>
+    <h1>Smartphones</h1>
+    <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+  </header>
+  <nav id="menu">
+    <a href="#iphone">iPhone 16</a>
+    <a href="#realme">Realme</a>
+  </nav>
+  <div class="content">
+    <div id="iphone" class="card">
+      <h2>iPhone 16</h2>
+      <div class="slider">
+        <div class="slider-item">
+          <img src="iphone161.png" alt="iPhone 16">
+        </div>
+        <div class="slider-item">
+          <img src="iphone162.png" alt="iPhone 16 - Foto 2">
+        </div>
+        <div class="slider-item">
+          <img src="iphone163.png" alt="iPhone 16 - Foto 3">
+        </div>
+        <div class="slider-item">
+          <video controls>
+            <source src="iphone16.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+      </div>
+      <p><strong>Preço:</strong> R$ 4.800,00</p>
+      <p><strong>Memória:</strong> 128GB</p>
+      <p><strong>Garantia:</strong> 1 ano</p>
+    </div><div id="realme" class="card">
+  <h2>Realme C61</h2>
+  <div class="slider">
+    <div class="slider-item">
+      <img src="c61.png" alt="Realme C61">
+    </div>
+    <div class="slider-item">
+      <img src="c611.png" alt="Realme C61 - Foto 2">
+    </div>
+    <div class="slider-item">
+      <video controls style="max-height: 500px;">
+        <source src="C61.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+      </video>
+    </div>
   </div>
+</div>
 
-  <a class="botao-whatsapp" href="https://wa.me/5511972590102?text=Estou%20interessado%20no%20iPhone%2016%20por%20apenas%205000" target="_blank">
-    Comprar pelo WhatsApp
-  </a>
-</body>
+<div class="card">
+  <h2>Realme Note 60</h2>
+  <div class="slider">
+    <div class="slider-item">
+      <img src="note60.png" alt="Realme Note 60">
+    </div>
+    <div class="slider-item">
+      <img src="note601.png" alt="Realme Note 60 - Foto 2">
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h2>Realme C75x</h2>
+  <div class="slider">
+    <div class="slider-item">
+      <img src="c75x1.png" alt="Realme C75x">
+    </div>
+    <div class="slider-item">
+      <img src="c75x.png" alt="Realme C75x - Foto 2">
+    </div>
+    <div class="slider-item">
+      <video controls style="max-height: 500px;">
+        <source src="C75x.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+      </video>
+    </div>
+  </div>
+</div>
+
+<div class="lead-box">
+  <h3>Escolha seu modelo e cor</h3>
+  <select id="modelo">
+    <option value="iPhone 16">iPhone 16</option>
+    <option value="Realme C61">Realme C61</option>
+    <option value="Realme Note 60">Realme Note 60</option>
+    <option value="Realme C75x">Realme C75x</option>
+  </select>
+
+  <select id="cor">
+    <option value="Rosa">Rosa</option>
+    <option value="Branco">Branco</option>
+    <option value="Preto">Preto</option>
+    <option value="Cinza">Cinza</option>
+    <option value="Vermelho">Vermelho</option>
+    <option value="Verde">Verde</option>
+  </select>
+
+  <button onclick="enviarWhatsapp(document.getElementById('modelo').value, document.getElementById('cor').value)">Consultar no WhatsApp</button>
+</div>
+
+  </div>  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('show');
+    }
+    function enviarWhatsapp(modelo, cor = null) {
+      const numero = '+5511972590102';
+      let mensagem = `Olá! Gostaria de saber se o modelo ${modelo}`;
+      if (cor) mensagem += ` na cor ${cor}`;
+      mensagem += ` está disponível.`;
+      const link = `https://wa.me/${numero}?text=${encodeURIComponent(mensagem)}`;
+      window.open(link, '_blank');
+    }
+  </script>
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.play().catch(e => {}); // ignora erros silenciosamente
+      } else {
+        video.pause();
+      }
+    });
+  }, {
+    threshold: 0.6 // 60% visível para começar a tocar
+  });
+
+  document.querySelectorAll('video').forEach(video => {
+    observer.observe(video);
+  });
+</script>
+  </body>
 </html>
