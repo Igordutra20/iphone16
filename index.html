@@ -117,6 +117,7 @@
   <nav id="menu">
     <a href="#iphone">iPhone 16</a>
     <a href="#realme">Realme</a>
+    <a href="#chatbot">Atendimento IA</a>
   </nav>
   <div class="content">
     <div id="iphone" class="card">
@@ -141,76 +142,83 @@
       <p><strong>Preço:</strong> R$ 4.800,00</p>
       <p><strong>Memória:</strong> 128GB</p>
       <p><strong>Garantia:</strong> 1 ano</p>
-    </div><div id="realme" class="card">
-  <h2>Realme C61</h2>
-  <div class="slider">
-    <div class="slider-item">
-      <img src="c61.png" alt="Realme C61">
     </div>
-    <div class="slider-item">
-      <img src="c611.png" alt="Realme C61 - Foto 2">
+    <div id="realme" class="card">
+      <h2>Realme C61</h2>
+      <div class="slider">
+        <div class="slider-item">
+          <img src="c61.png" alt="Realme C61">
+        </div>
+        <div class="slider-item">
+          <img src="c611.png" alt="Realme C61 - Foto 2">
+        </div>
+        <div class="slider-item">
+          <video controls style="max-height: 500px;">
+            <source src="C61.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+      </div>
     </div>
-    <div class="slider-item">
-      <video controls style="max-height: 500px;">
-        <source src="C61.mp4" type="video/mp4">
-        Seu navegador não suporta a tag de vídeo.
-      </video>
+    <div class="card">
+      <h2>Realme Note 60</h2>
+      <div class="slider">
+        <div class="slider-item">
+          <img src="note60.png" alt="Realme Note 60">
+        </div>
+        <div class="slider-item">
+          <img src="note601.png" alt="Realme Note 60 - Foto 2">
+        </div>
+      </div>
     </div>
+    <div class="card">
+      <h2>Realme C75x</h2>
+      <div class="slider">
+        <div class="slider-item">
+          <img src="c75x1.png" alt="Realme C75x">
+        </div>
+        <div class="slider-item">
+          <img src="c75x.png" alt="Realme C75x - Foto 2">
+        </div>
+        <div class="slider-item">
+          <video controls style="max-height: 500px;">
+            <source src="C75x.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="lead-box">
+      <h3>Escolha seu modelo e cor</h3>
+      <select id="modelo">
+        <option value="iPhone 16">iPhone 16</option>
+        <option value="Realme C61">Realme C61</option>
+        <option value="Realme Note 60">Realme Note 60</option>
+        <option value="Realme C75x">Realme C75x</option>
+      </select>
+      <select id="cor">
+        <option value="Rosa">Rosa</option>
+        <option value="Branco">Branco</option>
+        <option value="Preto">Preto</option>
+        <option value="Cinza">Cinza</option>
+        <option value="Vermelho">Vermelho</option>
+        <option value="Verde">Verde</option>
+      </select>
+      <button onclick="enviarWhatsapp(document.getElementById('modelo').value, document.getElementById('cor').value)">Consultar no WhatsApp</button>
+    </div>
+
+    <div id="chatbot" class="card">
+      <h2>Atendimento Inteligente</h2>
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/FBKxQcxfSUeeR8zUs1A4Q"
+        width="100%"
+        style="height: 100%; min-height: 700px"
+        frameborder="0"
+      ></iframe>
+    </div>
+
   </div>
-</div>
-
-<div class="card">
-  <h2>Realme Note 60</h2>
-  <div class="slider">
-    <div class="slider-item">
-      <img src="note60.png" alt="Realme Note 60">
-    </div>
-    <div class="slider-item">
-      <img src="note601.png" alt="Realme Note 60 - Foto 2">
-    </div>
-  </div>
-</div>
-
-<div class="card">
-  <h2>Realme C75x</h2>
-  <div class="slider">
-    <div class="slider-item">
-      <img src="c75x1.png" alt="Realme C75x">
-    </div>
-    <div class="slider-item">
-      <img src="c75x.png" alt="Realme C75x - Foto 2">
-    </div>
-    <div class="slider-item">
-      <video controls style="max-height: 500px;">
-        <source src="C75x.mp4" type="video/mp4">
-        Seu navegador não suporta a tag de vídeo.
-      </video>
-    </div>
-  </div>
-</div>
-
-<div class="lead-box">
-  <h3>Escolha seu modelo e cor</h3>
-  <select id="modelo">
-    <option value="iPhone 16">iPhone 16</option>
-    <option value="Realme C61">Realme C61</option>
-    <option value="Realme Note 60">Realme Note 60</option>
-    <option value="Realme C75x">Realme C75x</option>
-  </select>
-
-  <select id="cor">
-    <option value="Rosa">Rosa</option>
-    <option value="Branco">Branco</option>
-    <option value="Preto">Preto</option>
-    <option value="Cinza">Cinza</option>
-    <option value="Vermelho">Vermelho</option>
-    <option value="Verde">Verde</option>
-  </select>
-
-  <button onclick="enviarWhatsapp(document.getElementById('modelo').value, document.getElementById('cor').value)">Consultar no WhatsApp</button>
-</div>
-
-  </div>  <script>
+  <script>
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('show');
     }
@@ -224,22 +232,22 @@
     }
   </script>
   <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const video = entry.target;
-      if (entry.isIntersecting) {
-        video.play().catch(e => {}); // ignora erros silenciosamente
-      } else {
-        video.pause();
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.play().catch(e => {});
+        } else {
+          video.pause();
+        }
+      });
+    }, {
+      threshold: 0.6
     });
-  }, {
-    threshold: 0.1 // 60% visível para começar a tocar
-  });
 
-  document.querySelectorAll('video').forEach(video => {
-    observer.observe(video);
-  });
-</script>
-  </body>
+    document.querySelectorAll('video').forEach(video => {
+      observer.observe(video);
+    });
+  </script>
+</body>
 </html>
